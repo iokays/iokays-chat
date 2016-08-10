@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css"
+	href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-3.3.6.min.css">
+
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
+
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<!-- jQuery -->
+<script src="dist/js/jquery-1.10.2.min.js"></script>
+
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+
+<!-- Twitter Bootstrap -->
+<script src="dist/js/bootstrap-3.3.6.min.js"></script>
+
+<!-- Material Design for Bootstrap -->
+<script src="dist/js/material.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+
+<!-- Sliders -->
+<script src="dist/js/jquery.nouislider-6.2.0.min.js"></script>
+
+<!-- Dropdown.js -->
+<script src="dist/js/jquery.dropdown.js"></script>
+
+<!-- Socket.js -->
+<script src="dist/js/socket.io-1.4.5.js"></script>
+
+<meta charset="UTF-8">
+<title>iokaysChat</title>
+
+</head>
+<body>
+	<div class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-inverse-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)"></a>
+			</div>
+			<div class="navbar-collapse collapse navbar-inverse-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="bootstrap-elements.html"
+						data-target="#" class="dropdown-toggle" data-toggle="dropdown">消息
+							<b class="caret"></b>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="javascript:void(0)">消息</a></li>
+							<li><a href="javascript:void(0)">用户</a></li>
+							<li><a href="javascript:void(0)">群组</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control col-md-8"
+							placeholder="Search">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="1234569878585" class="list-group">
+		<div class="list-group-item" data-target="#radio-button">
+			<div class="row-picture">
+				<img class="circle" src="dist/img/dongdong.jpg" alt="icon">
+			</div>
+			<div class="row-content">
+				<div class="least-content">2016-07-23 14:34</div>
+				<div class="well well-sm">这是一条测试样式会话!</div>
+			</div>
+		</div>
+		<div class="list-group-separator"></div>
+	</div>
+
+	<form class="form-horizontal">
+		<fieldset>
+			<div class="form-group">
+				<label for="textArea" class="col-md-1 control-label">回复</label>
+				<div class="col-md-11">
+					<textarea class="form-control" rows="3" id="1234569878585-content"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-10 col-md-offset-2">
+					<button type="button" class="btn btn-default" onClick="send()">发送</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+
+	<script>
+		ip = '127.0.0.0';
+		
+		// In renderer process (web page).
+		const ipcRenderer = require('electron').ipcRenderer;
+		
+		function findAllUsers() {
+			
+		}
+		
+		function findOneUser(id) {
+			
+		} 
+	  	
+		ipcRenderer.on('asynchronous-reply', function(event, arg) {
+			console.log(arg);
+			var content = '<div class="list-group-item" data-target="#radio-button">';
+	  		content += '<div class="row-picture">';
+	  		content += '<img class="circle" src="dist/img/dongdong.jpg" alt="icon">';
+	  		content += '</div>';
+	  		content += '<div class="row-content">';
+	  		content += '<div class="least-content">' + new Date() + '</div>';
+	  		content += '<div class="well well-sm">' + arg.content + '</div>';
+	  		content += '</div>';
+			content += '</div>';
+			content += '<div class="list-group-separator"></div>';
+			var id = $('#1234569878585').append(content);
+		});
+		
+		ipcRenderer.on('user-reply', function(event, arg) {
+			console.log(arg);
+			ip = arg.address;
+			name= arg.name;
+		});
+		
+		function send(){
+	    	  var content = $('#1234569878585-content').val();
+	    	  console.log(content);
+	    	  var socket=io.connect('http://' + ip + ':37927');
+	    	  socket.emit('amigo', { content: content });
+	     }
+  </script>
+
+</body>
+</html>

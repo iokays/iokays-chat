@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Material Design fonts -->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-3.3.6.min.css">
+
+<!-- Bootstrap Material Design -->
+<link rel="stylesheet" type="text/css"
+	href="dist/css/bootstrap-material-design.css">
+<link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
+
+<!-- Page style -->
+<link href="dist/css/index.css" rel="stylesheet">
+  
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<!-- jQuery -->
+<script src="dist/js/jquery-1.10.2.min.js"></script>
+
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+
+<!-- Twitter Bootstrap -->
+<script src="dist/js/bootstrap-3.3.6.min.js"></script>
+
+<!-- Material Design for Bootstrap -->
+<script src="dist/js/material.js"></script>
+<script src="dist/js/ripples.min.js"></script>
+
+<!-- Sliders -->
+<script src="dist/js/jquery.nouislider-6.2.0.min.js"></script>
+
+<!-- Dropdown.js -->
+<script src="dist/js/jquery.dropdown.js"></script>
+<script>
+  $("#dropdown-menu select").dropdown();
+</script>
+
+<!-- jquery-dateFormat.js -->
+<script src="dist/js/jquery-dateFormat.js"></script>
+
+
+<meta charset="UTF-8">
+<title>iokaysChat</title>
+
+</head>
+<body>
+
+	<div class="header-panel shadow-z-2">
+	  <div class="container-fluid">
+	    <div class="row">
+	      <div class="col-xs-3">
+	        <h1>IokaysChat</h1>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="container-fluid main">
+		<div class="row">
+			<nav class="col-xs-2 menu">
+				<ul id = "users">
+					<li class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">小组<span class="caret"></span></a>
+					    <ul class="dropdown-menu">
+					      <li><a href="javascript:void(0)">市场部门</a></li>
+					      <li class="divider"></li>
+					      <li><a href="javascript:void(0)">讨论组</a></li>
+					    </ul>
+					 </li>
+				</ul>
+			</nav>
+			
+			<div class="pages col-xs-10">
+				<div class="row">
+					<div class="col-xs-10">
+						<div class="well page" id="content-moulde">
+							<div class="list-group">
+								<div class="list-group-item" data-target="#radio-button">
+									<div class="row-picture">
+										<img class="circle" src="dist/img/dongdong.jpg" alt="icon">
+									</div>
+									<div class="row-content">
+										<div class="least-content "><span class="longDateFormat">2009-12-18 10:54:50.546</span></div>
+										<div class="well well-sm">这是一条测试样式会话!</div>
+									</div>
+								</div>
+								<div class="list-group-separator"></div>
+							</div>
+							
+							<form class="form-horizontal">
+								<fieldset>
+									<div class="form-group">
+										<div class="col-md-11">
+											<textarea class="form-control" rows="3"  placeholder="回复内容"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-10 col-md-offset-2">
+											<button type="button" class="btn btn-default">发送</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+						
+						<div class="well page" id="content-moulde">
+							<div class="list-group">
+								<div class="list-group-item" data-target="#radio-button">
+									<div class="row-picture">
+										<img class="circle" src="dist/img/dongdong.jpg" alt="icon">
+									</div>
+									<div class="row-content">
+										<div class="least-content "><span class="longDateFormat">2009-12-18 10:54:50.546</span></div>
+										<div class="well well-sm">这是一条测试样式会话!</div>
+									</div>
+								</div>
+								<div class="list-group-separator"></div>
+							</div>
+							
+							<form class="form-horizontal">
+								<fieldset>
+									<div class="form-group">
+										<div class="col-md-11">
+											<textarea class="form-control" rows="3"  placeholder="回复内容"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-10 col-md-offset-2">
+											<button type="button" class="btn btn-default">发送</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+					
+					<div class="col-xs-2">
+			          <button type="button" class="btn btn-fab btn-material-grey-200 build">
+			            <i class="material-icons">build</i>
+			          </button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	
+	<div id="build-modal" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title">设置</h4>
+	      </div>
+	      <div class="modal-body">
+	      
+	      <div class="list-group">
+		  <div class="list-group-item">
+		    <div class="row-picture">
+		      <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
+		    </div>
+		    <div class="row-content">
+			   <div class="form-group form-group-lg label-floating">
+			    <label for="i6" class="control-label">请输入新的用户名</label>
+			    <input type="email" class="form-control" id="i6" value="风筝误">
+			    <span class="help-block">Please enter a valid email address</span>
+			  </div>
+		    </div>
+		  </div>
+		</div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<script>
+		ip = 'localhost';
+		// In renderer process (web page).
+		const ipcRenderer = require('electron').ipcRenderer;
+		const profile = ipcRenderer.sendSync("profile");
+		console.log('profile: ' + profile);
+		
+		ipcRenderer.on('profile-reply', function(event, arg) {
+			profile = arg;
+		});
+
+		ipcRenderer.on('find-all-users-reply', function(event, arg) {
+			for(var key in arg){
+				console.log(arg);
+				var content = '<li class="withripple" data-target="#' +  arg[key].id + '">' + arg[key].name + '</li>';
+				$('#users').append(content);
+				if (!document.getElementById(arg[key].id)) {
+					var message_style = $('.pages').children('div').children('div');
+					message_style.append('<div class="well page" id=' + arg[key].id + '>');
+					$('#' + arg[key].id).append($('#content-moulde').html());
+					
+					$('#' + arg[key].id).find('button').on("click", function(){
+						var message = {};
+						message.to = arg[key].id;
+						var text = $('#' + arg[key].id).find('textarea').val();
+						message.content = text;
+						console.log(message);
+						ipcRenderer.send('send-user-message', message);
+					});
+				}
+			}
+			
+			ipcRenderer.on('find-all-messages-reply', function(event, arg) {
+				for(var key in arg){
+					var value = arg[key];
+					var content = '<div class="list-group-item" data-target="#radio-button">';
+			  		content += '<div class="row-picture">';
+			  		content += '<img class="circle" src="dist/img/dongdong.jpg" alt="icon">';
+			  		content += '</div>';
+			  		content += '<div class="row-content">';
+			  		content += '<div class="least-content"><span class="longDateFormat">' + value.createdTime + '</span></div>';
+			  		content += '<div class="well well-sm">' + value.content + '</div>';
+			  		content += '</div>';
+					content += '</div>';
+					content += '<div class="list-group-separator"></div>';
+					
+					if (value.from == profile.id) {
+						var id = $('#' + value.to).children('div').append(content);
+					} else if (value.to == profile.id){
+						var id = $('#' + value.from).children('div').append(content);
+					}
+				}
+				
+				jQuery(function() {
+				      var shortDateFormat = 'dd/MM/yyyy';
+				      var longDateFormat  = 'dd/MM/yyyy HH:mm:ss';
+
+				      jQuery(".shortDateFormat").each(function (idx, elem) {
+				          if (jQuery(elem).is(":input")) {
+				              jQuery(elem).val(jQuery.format.date(jQuery(elem).val(), shortDateFormat));
+				          } else {
+				              jQuery(elem).text(jQuery.format.date(jQuery(elem).text(), shortDateFormat));
+				          }
+				      });
+				      jQuery(".longDateFormat").each(function (idx, elem) {
+				          if (jQuery(elem).is(":input")) {
+				              jQuery(elem).val(jQuery.format.date(jQuery(elem).val(), longDateFormat));
+				          } else {
+				              jQuery(elem).text(jQuery.format.date(jQuery(elem).text(), longDateFormat));
+				          }
+				      });
+				  });
+			});
+			
+			ipcRenderer.send('find-all-messages', '获取全部用户信息.');
+			
+			$(".menu li").click(function () {
+			    // Menu
+			    if (!$(this).data("target")) return;
+			    if ($(this).is(".active")) return;
+			    $(".menu li").not($(this)).removeClass("active");
+			    $(".page").not(page).removeClass("active").hide();
+			    window.page = $(this).data("target");
+			    var page = $(window.page);
+			    window.location.hash = window.page;
+			    $(this).addClass("active");
+			
+			    page.show();
+			
+			    var totop = setInterval(function () {
+			      $(".pages").animate({scrollTop: 0}, 0);
+			    }, 1);
+			
+			    setTimeout(function () {
+			      page.addClass("active");
+			      setTimeout(function () {
+			        clearInterval(totop);
+			      }, 1000);
+			    }, 100);
+			  });
+		});
+		ipcRenderer.send('find-all-users', '获取全部用户信息.');
+		
+		ipcRenderer.on('send-user-message-reply', function(event, arg) {
+			console.log(arg);
+			var content = '<div class="list-group-item" data-target="#radio-button">';
+	  		content += '<div class="row-picture">';
+	  		content += '<img class="circle" src="dist/img/dongdong.jpg" alt="icon">';
+	  		content += '</div>';
+	  		content += '<div class="row-content">';
+	  		content += '<div class="least-content">' + jQuery.format.prettyDate(arg.createdTime) + '</div>';
+	  		content += '<div class="well well-sm">' + arg.content + '</div>';
+	  		content += '</div>';
+			content += '</div>';
+			content += '<div class="list-group-separator"></div>';
+			var id = $('#' + arg.to).children('div').append(content);
+		});
+		
+		//消息到达后，响应
+		ipcRenderer.on('user-message', function(event, arg) {
+			console.log(arg);
+			var content = '<div class="list-group-item" data-target="#radio-button">';
+	  		content += '<div class="row-picture">';
+	  		content += '<img class="circle" src="dist/img/dongdong.jpg" alt="icon">';
+	  		content += '</div>';
+	  		content += '<div class="row-content">';
+	  		content += '<div class="least-content">' + jQuery.format.prettyDate(arg.receivedTime) + '</div>';
+	  		content += '<div class="well well-sm">' + arg.content + '</div>';
+	  		content += '</div>';
+			content += '</div>';
+			content += '<div class="list-group-separator"></div>';
+			var id = $('#' + arg.from).children('div').append(content);
+		});
+		
+		//用户上线
+		ipcRenderer.on('user-online', function(event, arg) {
+			console.log(arg);
+			var content = '<li class="withripple" data-target="#' +  arg + '">' + arg.name + '</li>';
+			$('#users').append(content);
+			if (!document.getElementById(arg.id)) {
+				var message_style = $('.pages').children('div').children('div');
+				message_style.append('<div class="well page" id=' + arg.id + '>');
+				$('#' + arg.id).append($('#content-moulde').html());
+				
+				$('#' + arg.id).find('button').on("click", function(){
+					var message = {};
+					message.to = arg.id;
+					var text = $('#' + arg.id).find('textarea').val();
+					message.content = text;
+					console.log(message);
+					ipcRenderer.send('send-user-message', message);
+				});
+			}
+		});
+		
+		//当新(旧)用户打开客户端，会收到一条消息，用于刷新用户的最新[name, icon, ip]状态
+		ipcRenderer.on('user-reply', function(event, arg) {
+			console.log(arg);
+			ip = arg.address;
+		});
+		
+	</script>
+	
+	<!-- Open source code -->
+	<script>
+	  window.page = window.location.hash || "#about";
+	
+	  $(document).ready(function () {
+	    if (window.page != "#about") {
+	      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
+	    }
+	  });
+	
+	  $(window).on("resize", function () {
+	    $("html, body").height($(window).height());
+	    $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
+	    $(".pages").height($(window).height());
+	  }).trigger("resize");
+	
+	  function cleanSource(html) {
+	    var lines = html.split(/\n/);
+	    lines.shift();
+	    lines.splice(-1, 1);
+	    var indentSize = lines[0].length - lines[0].trim().length,
+	        re = new RegExp(" {" + indentSize + "}");
+	    
+	    lines = lines.map(function (line) {
+	      if (line.match(re)) {
+	        line = line.substring(indentSize);
+	      }
+	
+	      return line;
+	    });
+	
+	    lines = lines.join("\n");
+	
+	    return lines;
+	  }
+	
+	  $(".build").click(function () {
+	    $.get(window.location.href, function (data) {
+	      var html = $(data).find(window.page).html();
+	      //html = cleanSource(html);
+	      $("#build-modal pre").text(html);
+	      $("#build-modal").modal();
+	    });
+	  });
+	  
+	  
+	</script>
+
+</body>
+</html>
